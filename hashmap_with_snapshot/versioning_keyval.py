@@ -1,9 +1,4 @@
 class VersionKeyVal:
-    """
-        Implementing a versioning KeyVal class, that supports versioning retrieval from key val storage
-            raise KeyError when key is miss from KeyVal strorage
-            it is safe to assume that no snapshot would be in deprecation
-    """
 
     def __init__(self):
         self.keyval, self.persist = {}, {}
