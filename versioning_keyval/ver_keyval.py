@@ -1,7 +1,8 @@
 class VersionKeyVal:
     """
         Implementing a versioning KeyVal class, that supports versioning retrieval from key val storage
-
+            raise KeyError when key is miss from KeyVal strorage
+            it is safe to assume that no snapshot would be in deprecation
     """
 
     def __init__(self):
@@ -27,7 +28,7 @@ class VersionKeyVal:
             self.persist[key] = {}
         self.persist[key][self.snaps] = val
 
-    def delete(self, key: str) -> None:
+    def delete(self, key: str) -> None: 
         self.keyval.pop(key)
         if key not in self.persist:
             self.persist[key] = {}
