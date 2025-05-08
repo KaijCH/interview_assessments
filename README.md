@@ -6,5 +6,6 @@ more legit testcases on the go;
 
 subfolder structure shall be:
 | - folder_problem_name
-  | - testcase.script, with assessertion 
-  | - implementation.script
+  | - testcase.script, with assessertion
+  | - implementation.script, includes solution
+  | - description.md, includes statements and inspirations
