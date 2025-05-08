@@ -34,7 +34,8 @@ def runs()-> None:
     assert matches["3"] == "Eliza", "err in transaction_id 3"
     assert matches["4"] == "Dinda", "err in transaction_id 4"
     assert matches["5"] in ["Peggi", "Heidi"], "err in transaction_id 5"
-    print(matches)
+    
+    print("success")
 
 
 if __name__ == "__main__":

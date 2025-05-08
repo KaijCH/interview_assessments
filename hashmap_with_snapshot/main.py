@@ -1,101 +1,101 @@
 from hashmap_snapshot.versioning_keyval import VersionKeyVal
 
 def runs() -> None:
-    vkv = VersionKeyVal()
+    verkyvl = VersionKeyVal()
 
     try:
-        vkv.search("a")
+        verkyvl.search("a")
     except KeyError:
         print("search a key err", True)
 
-    vkv.upsert("a", 1)
-    vkv.upsert("b", 2)
+    verkyvl.upsert("a", 1)
+    verkyvl.upsert("b", 2)
 
     try:
-        res = vkv.search("a")
+        res = verkyvl.search("a")
     except KeyError:
         print("search a key err", False)
     print("search a == 1", res == 1)
 
-    vkv.upsert("a", 50)
+    verkyvl.upsert("a", 50)
     try:
-        res = vkv.search("a")
+        res = verkyvl.search("a")
     except KeyError:
         print("search a key err", False)
     print("search a == 50", res == 50)
 
-    snap1 = vkv.snapshot()
-    print(vkv.persist, snap1)
+    snap1 = verkyvl.snapshot()
+    print(verkyvl.persist, snap1)
 
     try:
-        res = vkv.search("b", snap1)
+        res = verkyvl.search("b", snap1)
     except KeyError:
         print("search b key err", False)
     print("search b snap1 == 2", res == 2)
 
     try:
-        res = vkv.search("b", snap1 - 1)
+        res = verkyvl.search("b", snap1 - 1)
     except KeyError:
         print("search b snap0 ver err", True)
 
-    snap2 = vkv.snapshot()
-    print(vkv.persist)
+    snap2 = verkyvl.snapshot()
+    print(verkyvl.persist)
 
     try:
-        res = vkv.search("b", snap2)
+        res = verkyvl.search("b", snap2)
     except KeyError:
         print("search b snap2 ver err", False)
     print("search b snap2 == 2", res == 2)
 
-    vkv.upsert("c", 120)
+    verkyvl.upsert("c", 120)
     try:
-        res = vkv.search("c")
+        res = verkyvl.search("c")
     except KeyError:
         print("search c key err", False)
     print("search c == 120", res == 120)
 
     try:
-        res = vkv.search("c", snap2)
+        res = verkyvl.search("c", snap2)
     except KeyError:
         print("search c snap2 ver err", True)
 
-    snap3 = vkv.snapshot()
-    print(vkv.persist)
+    snap3 = verkyvl.snapshot()
+    print(verkyvl.persist)
     try:
-        res = vkv.search("c", snap3)
+        res = verkyvl.search("c", snap3)
     except KeyError:
         print("search c snap3 ver err", False)
     print("search c snap2 == 120", res == 120)
 
-    vkv.delete("b")
+    verkyvl.delete("b")
 
     try:
-        res = vkv.search("b", snap3)
+        res = verkyvl.search("b", snap3)
     except KeyError:
         print("search c snap2 ver err", False)
     print("search b snap3 == 2", res == 2)
 
     try:
-        res = vkv.search("b")
+        res = verkyvl.search("b")
     except KeyError:
         print("search b ver err", True)
 
-    snap4 = vkv.snapshot()
-    print(vkv.persist)
+    snap4 = verkyvl.snapshot()
+    print(verkyvl.persist)
 
     try:
-        res = vkv.search("b", snap4)
+        res = verkyvl.search("b", snap4)
     except KeyError:
         print("search b key err", True)
 
 
-    vkv.upsert("b", 99)
+    verkyvl.upsert("b", 99)
 
-    snap5 = vkv.snapshot()
-    print(vkv.persist)
+    snap5 = verkyvl.snapshot()
+    print(verkyvl.persist)
 
     try:
-        res = vkv.search("b", snap5)
+        res = verkyvl.search("b", snap5)
     except KeyError:
         print("search b key err", False)
     print("search b snap5 == 99", res == 99)
