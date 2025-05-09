@@ -1,11 +1,20 @@
-repo for solutions of some coding problems I was encountering during interview assessments;
+# Some Problems in Interview Assessments
 
-feel free to push for more effective solutions, or include more problems;
+Repo for solutions of some coding problems I was encountering during interview assessments;
 
-more legit testcases on the go;
+Feel free to push for more effective solutions, or include more problems;
 
-subfolder structure shall be:
-| - folder_problem_name
-  | - testcase.script, with assessertion
-  | - implementation.script, includes solution
-  | - description.md, includes statements and inspirations
+More legit testcases on the go;
+
+Subfolder structure for each problem shall be:
+
+```
+interview_assessments/
+├── README.md
+├── .gitignore
+└── folder_problem_name/
+    ├── testcase_script, with assessertion
+    ├── implementation_script, includes solution
+    └── problem_name.md, includes statements and inspirations
+
+```
