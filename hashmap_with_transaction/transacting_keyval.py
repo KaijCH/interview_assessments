@@ -16,15 +16,20 @@ class TxnKeyVal:
             return -1
         return self.keyval[key]
     
-    def commit(self) -> None:
+    def commit(self) -> bool:
         if not self.transactions:
-            return
+            return False
         inner = self.transactions.pop()
         outer = self.keyval if not self.transactions else self.transactions[-1]
         for key, val in inner.items():
             outer[key] = val
+        return True
         
     def transact(self) -> None:
         self.transactions.append(dict())
 
-    
+    def rollback(self) -> bool:
+        if not self.transactions: 
+            return False
+        self.transactions.pop()
+        return True

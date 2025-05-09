@@ -3,16 +3,14 @@
 ## Descriptions
 
 1. using dataset of transactions, orders, tickets (each in csv-like format, list), re-match transaction id back to useranme
-
-2. assuming each user will place only 1 order, assuming all users will places 1 order each
-
-3. explaining content of datasets:
-
+    
     > orders: name, mail, label, count
 
     > tickets: label, value
 
     > transactions: id, total, mail
+
+2. assuming each user will place only 1 order, assuming all users will places 1 order each
 
 ## Inspriations
 
