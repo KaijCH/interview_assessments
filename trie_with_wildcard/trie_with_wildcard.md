@@ -2,15 +2,15 @@
 
 ## Description
 
-- implementing a Trie to fulfil the insertion and observation of input word
+- implementing a Trie to fulfil the upsert, search of words
 
     > explores(word: str) -> bool, return truthy of whether `word` exist in current trie
 
     > inserts(word: str) -> None, fulfill insertion of current `word`
 
-- the exploration of word supports `.` wildcard, each wildcard equal to any single valid char
+- the exploration of word supports `.` & `*` wildcards, behaves similarly to RegEx
 
-    > explores("apples") == explores(".pples")
+    > explores("apples") == explores(".pples") == explores("a.\*les") == explores("apples.\*")
 
 - 0 <= len(word) < 10 ** 4
 
