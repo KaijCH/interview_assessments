@@ -43,6 +43,11 @@ def main() -> None:
     assert trie.explores("e.*.*.*.*xxxxert") == True, "mismatch `e.*.*.*.*xxxxert` from `exxxxxxxxert`"
     assert trie.explores("e.*.*.*.*x.*xxert") == True, "mismatch `e.*.*.*.*x.*xxert` from `exxxxxxxxert`"
 
+    assert trie.explores("a.*") == False, "false match `a.*`"
+    trie.inserts("a")
+    assert trie.explores("a.*") == True, "miss `a.*` from `a`"
+    assert trie.explores(".*") == True, "miss `.*` from `a`"
+
     print("over success")
 
 

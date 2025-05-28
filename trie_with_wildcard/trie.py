@@ -21,9 +21,9 @@ class Trie:
             return False
         length, layer, seen = len(word), self.lookups, set()
         # (layer of trie, idx of word match)
-        searches = collections.deque([(layer, 0)])
+        searches = [(layer, 0)]
         while searches:
-            layer, idx = searches.popleft()
+            layer, idx = searches.pop()
             memo = (id(layer), idx)
             if memo in seen: 
                 continue
@@ -51,9 +51,9 @@ class Trie:
             searches.append((layer, idx + 2))
             # multiple wildcard match, if wildcard consume more char in word, using dfs for route consistence
             for key, sublayer in layer.items():
-                while key in sublayer:
+                while sublayer:
                     searches.append((sublayer, idx + 2))
+                    if key not in sublayer: break
                     sublayer = sublayer[key]
-                searches.append((sublayer, idx + 2))
         return False
                 
