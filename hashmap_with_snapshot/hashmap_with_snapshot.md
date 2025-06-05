@@ -12,7 +12,7 @@
 
     > `snapshot() -> int`: create version of current hashmap, return `snapshot id` in int starting from 0
 
-3. using as minimum as possible of space, and close to O(1) runtime for all operations: `delete()`, `search()`, `upsert()`, `snapshot()`
+2. using as minimum as possible of space, and close to O(1) runtime for all operations: `delete()`, `search()`, `upsert()`, `snapshot()`
 
 ## Inspriations
 
