@@ -2,7 +2,7 @@ from closest_triplets import finds_triplets
 
 
 def validates(exp: list, res: list) -> bool:
-    return sorted(sorted(e for e in exp)) == sorted(sorted(r for r in res))
+    return sorted(sorted(exp)) == sorted(sorted(res))
 
 
 def main() -> None:
