@@ -2,17 +2,19 @@
 
 ## Descriptions
 
-1. implementing a Hashmap class with Snapshot capabilities, that supports versioning retrieval of keys' value
+1. Implementing a Hashmap class with Snapshot capabilities, that supports versioning retrieval of keys' value
 
-    > `upsert(key: str, val: int) -> None`: update & insert `key:val` pair to hashmap storage
+> `upsert(key: str, val: int) -> None`: update & insert `key:val` pair to hashmap storage
 
-    > `search(key: str, vers: int = None) -> int`: search val by `key`, if `vers` specifies then retrieval perform among the snapshot version, raise KeyError if `key` misses or `vers` exceeds current snapshot version
+> `search(key: str, vers: int = None) -> int`: search val by `key`, if `vers` specifies then retrieval perform among the snapshot version, raise KeyError if `key` misses or `vers` exceeds current snapshot version
 
-    > `delete(key: str) -> None`: delete `key` from current hashmap, raise KeyError if key misses
+> `delete(key: str) -> None`: delete `key` from current hashmap, raise KeyError if key misses
 
-    > `snapshot() -> int`: create version of current hashmap, return `snapshot id` in int starting from 0
+> `snapshot() -> int`: create version of current hashmap, return `snapshot id` in int starting from 0
 
-2. using as minimum as possible of space, and close to O(1) runtime for all operations: `delete()`, `search()`, `upsert()`, `snapshot()`
+
+2. Using as minimum as possible of space, and close to O(1) runtime for all operations: `delete()`, `search()`, `upsert()`, `snapshot()`
+
 
 ## Inspriations
 

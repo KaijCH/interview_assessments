@@ -12,7 +12,6 @@
 
 5. Displaying of message should be thru `Message.displays()`, and return a list of filtered message
 
-
 ## Inspiration
 
 ## How to organize the relation between Message instance and Time to present

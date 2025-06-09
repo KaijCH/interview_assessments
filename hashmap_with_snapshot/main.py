@@ -68,9 +68,10 @@ def runs() -> None:
 
     snap5 = verkyvl.snapshot()
 
-    assert  verkyvl.search("b", snap5) == 99, "failure in val fetch from snap: "+ snap5
+    assert  verkyvl.search("b", snap5) == 99, "failure in val fetch from snap: " + snap5
 
-    print("success")
+    
+    print("overall success")
 
 
 if __name__ == "__main__":
