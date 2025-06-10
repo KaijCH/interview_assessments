@@ -2,16 +2,18 @@
 
 ## Description
 
-1. implementing `flattens(elements: list)` function which serve flattening all elements from in given nested list `elements`
+1. Implementing `flattens(elements: list)` function which serve flattening all elements from in given nested list `elements`
 
-2. securing the function so that it withstands the recursive array or empty element
+2. Securing the function so that endures the cyclic array like below
 
-```[]Python
-    # example of constructing a recursive arr
-    arr = [1, 2]
-    arr[0] = arr
+    ```[]Python
+        # example of constructing a recursive arr
+        arr = [1, 2]
+        arr[0] = arr
 
-```
+    ```
+
+3. (Follow-up) Implementing in both iterative and recursive
 
 ## Inspriation
 
