@@ -2,7 +2,7 @@
 
 ## Descriptions
 
-1. using dataset of transactions, orders, tickets (each in csv-like format, list), re-match transaction id back to useranme
+1. Using dataset of transactions, orders, tickets (each in csv-like format, list), re-match transaction id back to useranme
     
     > orders: name, mail, label, count
 
@@ -10,7 +10,7 @@
 
     > transactions: id, total, mail
 
-2. assuming each user will place only 1 order, assuming all users will places 1 order each
+2. Assuming each user will place only 1 order, assuming all users will places 1 order each
 
 ## Inspriations
 
@@ -20,8 +20,8 @@
 
 ### how to handle mail addr miss from transactions, and multi user place same total transactions
 
-1. keeping separate lookups between total & name `{total:[name, name, ...]}` so that if mail legit the record is legit for return
+1. Keeping separate lookups between total & name `{total:[name, name, ...]}` so that if mail legit the record is legit for return
 
-2. discarding name from `{total:[name, name, ...]}` storage once record finds valid and enqueue for return, avoiding duplications
+2. Discarding name from `{total:[name, name, ...]}` storage once record finds valid and enqueue for return, avoiding duplications
 
-3. keeping a separate list of "miss mail transaction" `[(id, total)]` for final random assignment between name & transaction id
+3. Keeping a separate list of "miss mail transaction" `[(id, total)]` for final random assignment between name & transaction id

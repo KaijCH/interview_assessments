@@ -8,13 +8,14 @@ More legit testcases on the go;
 
 Subfolder structure for each problem shall be:
 
-```
-interview_assessments/
-├── README.md
-├── .gitignore
-└── folder_problem_name/
-    ├── testcase_script, with assessertion
-    ├── implementation_script, includes solution
-    └── problem_name.md, includes statements and inspirations
+```Markdown
+
+    interview_assessments/
+    ├── README.md
+    ├── .gitignore
+    └── folder_problem_name/
+        ├── testcase_script, with assessertion
+        ├── implementation_script, includes solution
+        └── problem_name.md, includes statements and inspirations
 
 ```

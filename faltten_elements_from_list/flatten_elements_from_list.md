@@ -2,7 +2,7 @@
 
 ## Description
 
-1. Implementing `flattens(elements: list)` function which serve flattening all elements from in given nested list `elements`
+1. Implementing `flattens(elements: list)` function which serve flattening all elements in the given nested list `elements`
 
 2. Securing the function so that endures the cyclic array like below
 

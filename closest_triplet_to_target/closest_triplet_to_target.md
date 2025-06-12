@@ -2,7 +2,7 @@
 
 ## Description
 
-1. implementing `finds_triplets(nums: list, target: int)` function, finding all unique triplets from given `nums` arr, satisfying condition that triplets' sum are closest to the given `target` integer
+1. Implementing `finds_triplets(nums: list, target: int)` function, finding all unique triplets from given `nums` arr, satisfying condition that triplets' sum are closest to the given `target` integer
 
 ## Inspiration
 

@@ -2,7 +2,7 @@
 
 ## Descriptions
 
-1. implementing a HashMap class that support transaction operation:
+1. Implementing a HashMap class that support transaction operation:
 
     > `upsert(key: str, val:int) -> None`: insert & update key-val pair to current writing transaction or major storage
 
@@ -14,9 +14,9 @@
 
     > `rollback() -> bool`: rollback current transaction, return `True` if successful, `Fasle` if no change to rollback
 
-2. requiring current transaction operations are not affecting the outside values unless `commit()` calls
+2. Requiring current transaction operations are not affecting the outside values unless `commit()` calls
 
-3. assuming invocation of `transact()` & `commit` is accessible in any point of time in rumtime
+3. Assuming invocation of `transact()` & `commit` is accessible in any point of time in rumtime
 
 ## Inspriations
 
