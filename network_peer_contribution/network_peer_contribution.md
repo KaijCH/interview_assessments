@@ -27,7 +27,7 @@
 
 1. Implementing function `NetworkServer.record_chunk_transaction()` to persist network peer interactions
 
-2. Implementing function `NetworkServer.rank_vehicles()` that yeilds a list of peer's contribution, in desc order
+2. Implementing function `NetworkServer.rank_peers()` that ranks peer instances by each contribution, returning list of peer_id in desc order
 
 3. (Follow-up) Providing the difference between total peer-to-peer contribution value and if direct-distributes to all peer instances
 
