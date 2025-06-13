@@ -20,7 +20,7 @@
 
 ## Inspriations
 
-### how to keep `key-val` pair in transaction and not interfere with values outside of transaction
+### How to keep `key-val` pair in transaction and not interfere with values outside of transaction
 
 1. searching `key` only return `key:val` from the major (hashmap) storage
 

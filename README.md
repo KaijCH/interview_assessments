@@ -16,6 +16,6 @@ Subfolder structure for each problem shall be:
     └── folder_problem_name/
         ├── testcase_script, with assessertion
         ├── implementation_script, includes solution
-        └── problem_name.md, includes statements and inspirations
+        └── readme.md, includes statements and inspirations
 
 ```
