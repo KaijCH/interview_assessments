@@ -2,7 +2,7 @@
 
 ## Description
 
-1. Designing `KeyValO1` class that fulfills LRU cache designs with max capacity of storage
+1. Designing cache that fulfills LRU designs with max capacity of storage
 
 2. Implementing get & set operation following requirements below
 
