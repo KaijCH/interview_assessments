@@ -1,10 +1,10 @@
-# O1 Least Recent Used Cache
+# O1 LRU Cache
 
 ## Description
 
 1. Designing `KeyValO1` class that fulfills LRU cache designs with max capacity of storage
 
-2. Implementing get & set operation follows requirements below
+2. Implementing get & set operation following requirements below
 
     > `search(key: str) -> tuple[str, bool]` returning `"", False` if key does not exist in cache otherwise `EXPECT_VAL, True`
 
