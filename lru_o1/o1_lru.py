@@ -17,15 +17,6 @@ class KeyValO1:
 
         self.keyval = {}
         self.maxima = maxima
-    
-    def search(self, key: str) -> tuple[str, bool]:
-        if key not in self.keyval:
-            return "", False
-        
-        vn = self.keyval[key]
-        self.__promote(key)
-        
-        return vn.val, True
 
     def __promote(self, key: str) -> None:
         vn = self.keyval[key]
@@ -42,13 +33,23 @@ class KeyValO1:
         vn.prev = self.head
         self.head.next = vn
         
-
     def __evict(self) -> str:
         vn = self.tail.prev
         vn.prev.next = self.tail
         self.tail.prev = vn.prev
         return vn.key
 
+    
+    def search(self, key: str) -> tuple[str, bool]:
+        if key not in self.keyval:
+            return "", False
+        
+        vn = self.keyval[key]
+        self.__promote(key)
+        
+        return vn.val, True
+
+    
 
     def upsert(self, key: str, val: str) -> None:
         vn = ValNode(key, val) if key not in self.keyval else self.keyval[key]
