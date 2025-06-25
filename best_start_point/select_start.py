@@ -1,52 +1,49 @@
-
-
 import collections
 import math
 
 
-class Solution:
+class Solution:    
 
-    def checked(self, coord: list, seen) -> x:
-        for t in targest_p:
-            if coord, p in cache:
-                seen.add(p)
-        return []
+    def retrack(self, rowt: int, colt: int) -> None:
+        queue = collections.deque([(rowt, colt, 0)])
+        visits = {(rowt, colt)}
+        while queue:
+            row, col, val = queue.popleft()
+            for rx, cx in self.opts:
+                rowx, colx = row + rx, col + cx
+                if not 0 <= rowx  < self.rows or not 0 <= colx < self.cols: 
+                    continue
+                if self.board[rowx][colx] == "#":
+                    continue
+                curr = (rowx, colx)
+                if curr  in visits:
+                    continue
+                visits.add(curr)
+                self.visits[rowx][colx] += 1
+                self.dists[rowx][colx] += val
+                queue.append((rowx, colx, val + 1))
 
-    def selects(self, grid: list[list[str]], points: list[list[int]]) -> list:
-        rows, cols = len(grid), len(grid[0])
-        if not rows or not cols: 
-            return []
-        cache = {}
-        opts = [[0, 1], [1, 0], [0, -1], [-1, 0]]
-        minima = math.inf
-        best = [-1, -1]
-        for row in range(rows):
-            for col in range(cols):
-                visits = set()
-                seen = set()
-                queue = collections.deque()
-                queue.append([row, col, 0])
-                dist = 0
-                while queue:
-                    rowc, colc, valc = queue.popleft()
-                    if [rowc, colc] in points:
-                        cache[(row, col, rowc, colc)] = valc
-                        dist += valc
-                        seen.add((rowc, colc))
-                        if len(seen) == len(points):
-                            break
-                    for rx, cx in opts:
-                        rowx, colx = rowc+ rx, colc + cx
-                        if grid[rowx][colx] == "#":
-                            continue
-                        if (rowx, colx) in visits:
-                            continue
-                        if self.checked(rowx, colx, seen) !=  -1:
-                            
-                        queue.append([rowx, colx, valc + 1])
-                if dist < minima:
-                    minima = dist
-                    best = [row, col]
+    def choose_start(self, board: list[list[str]], targets: list[list[int]]) -> list:
+        self.rows, self.cols = len(board), len(board[0])
+        self.board, self.targets = board, targets
+        self.opts = [[0, -1], [0, 1], [-1, 0], [1, 0]]
+        visits = len(targets)
 
-        return best
+        if not self.rows or not self.cols: return []
+
+        self.visits = [[0 for _ in range(self.cols)] for _ in range(self.rows)]
+        self.dists = [[0 for _ in range(self.cols)] for _ in range(self.rows)]
+        for rowt, colt in self.targets:
+            self.retrack(rowt, colt)
+        
+        minima, start = math.inf, [-1, -1]
+        for row in range(self.rows):
+            for col in range(self.cols):
+                if self.visits[row][col] != visits: 
+                    continue
+                if minima <= self.dists[row][col] :
+                    continue
+                minima = self.dists[row][col]
+                start = [row, col]
+        return start
 
