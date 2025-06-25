@@ -5,6 +5,7 @@ import math
 class Solution:    
 
     def retrack(self, rowt: int, colt: int) -> None:
+        self.visits[rowt][colt] += 1
         queue = collections.deque([(rowt, colt, 0)])
         visits = {(rowt, colt)}
         while queue:
